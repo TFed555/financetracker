@@ -40,11 +40,7 @@ class _AddIncomeScreenState extends State<AddIncomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => FinancesBloc(Repository())
-        ..add(FinancesEvent.fetched(userId: widget.userId)),
-      child: Builder(
-        builder: (newContext) => Scaffold(
+    return Scaffold(
           appBar: AppBar(
             title: const Text('Add Expense'),
           ),
@@ -80,15 +76,13 @@ class _AddIncomeScreenState extends State<AddIncomeScreen> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () => _addIncome(newContext),
+                  onPressed: () => _addIncome(context),
                   child: const Text('Add Income'),
                 ),
               ],
             ),
           ),
-        ),
-      ),
-    );
+        );
   }
 
   @override

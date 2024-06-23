@@ -16,7 +16,7 @@ class FinancesBloc extends Bloc<FinancesEvent, FinancesState> {
         started: (_) async => const _Started(),
         addExpense: (value) async => _addExpense(value, emit),
         addIncome: (value) async => _addIncome(value, emit),
-        fetched: (value) async => _fetched(emit),
+        fetched: (value) async => _fetched(value, emit),
       );
     });
   }
@@ -25,9 +25,9 @@ class FinancesBloc extends Bloc<FinancesEvent, FinancesState> {
     emit(const FinancesState.loading());
     try {
       await _repository.addExpense(event.expense);
-      final expenses = await _repository.fetchExpenses();
-      await _fetched(emit);
-      emit(FinancesState.updatedExpenses(expenses));
+      final expenses = await _repository.fetchExpenses(event.expense.userId);
+      final incomes = await _repository.fetchIncomes(event.expense.userId);
+      emit(FinancesState.updatedExpenses(expenses, incomes));
     }
     catch(e){
       emit(const FinancesState.error('Cannot add expense'));
@@ -38,19 +38,20 @@ class FinancesBloc extends Bloc<FinancesEvent, FinancesState> {
     emit(const FinancesState.loading());
     try {
       await _repository.addIncome(event.income);
-      final incomes = await _repository.fetchIncomes();
-      emit(FinancesState.updatedIncomes(incomes));
+      final incomes = await _repository.fetchIncomes(event.income.userId);
+      final expenses = await _repository.fetchExpenses(event.income.userId);
+      emit(FinancesState.updatedIncomes(incomes, expenses));
     }
     catch(e){
       emit(const FinancesState.error('Cannot add expense'));
     }
   }
 
-  Future<void> _fetched(Emitter<FinancesState> emit) async {
+  Future<void> _fetched(_Fetched event, Emitter<FinancesState> emit) async {
     emit(const FinancesState.loading());
     try {
-      final list = await _repository.fetchExpenses();
-      final list_2 = await _repository.fetchIncomes();
+      final list = await _repository.fetchExpenses(event.userId);
+      final list_2 = await _repository.fetchIncomes(event.userId);
       emit(FinancesState.loaded(list, list_2));
     }
     catch(e){

@@ -62,8 +62,12 @@ class AppDatabase extends _$AppDatabase {
     await into(incomeTable).insert(companion);
   }
 
-  Future<List<ExpenseTableData>> getExpenses() => select(expenseTable).get();
-  Future<List<IncomeTableData>> getIncomes() => select(incomeTable).get();
+  Future<List<ExpenseTableData>> getExpenses(int userId) {
+    return (select(expenseTable)..where((tbl) => tbl.userId.equals(userId))).get();
+  }
+  Future<List<IncomeTableData>> getIncomes(int userId) {
+    return (select(incomeTable)..where((tbl) => tbl.userId.equals(userId))).get();
+  }
 
   Future<ExpenseTableData> getExpense() => select(expenseTable).getSingle();
 

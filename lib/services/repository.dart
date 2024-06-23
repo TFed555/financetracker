@@ -4,11 +4,11 @@ import 'package:finance_tracker1/models/expense.dart';
 import 'package:finance_tracker1/models/income.dart';
 
 abstract class IRepository {
-  Future <List<Expense>> fetchExpenses();
+  Future <List<Expense>> fetchExpenses(int userId);
 
   Future<void> addExpense(Expense expense);
 
-  Future <List<Income>> fetchIncomes();
+  Future <List<Income>> fetchIncomes(int userId);
 
   Future<void> addIncome(Income income);
 
@@ -17,11 +17,11 @@ abstract class IRepository {
 class Repository implements IRepository {
 
   @override
-  Future <List<Expense>> fetchExpenses() async {
+  Future <List<Expense>> fetchExpenses(int userId) async {
     final db = AppDatabaseProvider.instance;
     final List<Expense> expenseItems = [];
     try {
-      final items = await db.getExpenses();
+      final items = await db.getExpenses(userId);
       expenseItems.addAll(items.map((e) => Expense.fromDataBase(e)));
       // await db.deleteAllExpenses();
       // await db.deleteAllIncomes();
@@ -39,11 +39,11 @@ class Repository implements IRepository {
   }
 
   @override
-  Future <List<Income>> fetchIncomes() async {
+  Future <List<Income>> fetchIncomes(int userId) async {
     final db = AppDatabaseProvider.instance;
     final List<Income> incomeItems = [];
     try {
-      final items = await db.getIncomes();
+      final items = await db.getIncomes(userId);
       incomeItems.addAll(items.map((e) => Income.fromDataBase(e)));
       return incomeItems;
     }

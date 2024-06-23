@@ -643,8 +643,10 @@ mixin _$FinancesState {
     required TResult Function() loading,
     required TResult Function(List<Expense> expenses, List<Income> incomes)
         loaded,
-    required TResult Function(List<Expense> expenses) updatedExpenses,
-    required TResult Function(List<Income> incomes) updatedIncomes,
+    required TResult Function(List<Expense> expenses, List<Income> incomes)
+        updatedExpenses,
+    required TResult Function(List<Income> incomes, List<Expense> expenses)
+        updatedIncomes,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -653,8 +655,10 @@ mixin _$FinancesState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult? Function(List<Expense> expenses)? updatedExpenses,
-    TResult? Function(List<Income> incomes)? updatedIncomes,
+    TResult? Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult? Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -663,8 +667,10 @@ mixin _$FinancesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult Function(List<Expense> expenses)? updatedExpenses,
-    TResult Function(List<Income> incomes)? updatedIncomes,
+    TResult Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -762,8 +768,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function(List<Expense> expenses, List<Income> incomes)
         loaded,
-    required TResult Function(List<Expense> expenses) updatedExpenses,
-    required TResult Function(List<Income> incomes) updatedIncomes,
+    required TResult Function(List<Expense> expenses, List<Income> incomes)
+        updatedExpenses,
+    required TResult Function(List<Income> incomes, List<Expense> expenses)
+        updatedIncomes,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -775,8 +783,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult? Function(List<Expense> expenses)? updatedExpenses,
-    TResult? Function(List<Income> incomes)? updatedIncomes,
+    TResult? Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult? Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -788,8 +798,10 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult Function(List<Expense> expenses)? updatedExpenses,
-    TResult Function(List<Income> incomes)? updatedIncomes,
+    TResult Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -889,8 +901,10 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() loading,
     required TResult Function(List<Expense> expenses, List<Income> incomes)
         loaded,
-    required TResult Function(List<Expense> expenses) updatedExpenses,
-    required TResult Function(List<Income> incomes) updatedIncomes,
+    required TResult Function(List<Expense> expenses, List<Income> incomes)
+        updatedExpenses,
+    required TResult Function(List<Income> incomes, List<Expense> expenses)
+        updatedIncomes,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -902,8 +916,10 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult? Function(List<Expense> expenses)? updatedExpenses,
-    TResult? Function(List<Income> incomes)? updatedIncomes,
+    TResult? Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult? Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -915,8 +931,10 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult Function(List<Expense> expenses)? updatedExpenses,
-    TResult Function(List<Income> incomes)? updatedIncomes,
+    TResult Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1066,8 +1084,10 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function() loading,
     required TResult Function(List<Expense> expenses, List<Income> incomes)
         loaded,
-    required TResult Function(List<Expense> expenses) updatedExpenses,
-    required TResult Function(List<Income> incomes) updatedIncomes,
+    required TResult Function(List<Expense> expenses, List<Income> incomes)
+        updatedExpenses,
+    required TResult Function(List<Income> incomes, List<Expense> expenses)
+        updatedIncomes,
     required TResult Function(String message) error,
   }) {
     return loaded(expenses, incomes);
@@ -1079,8 +1099,10 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult? Function(List<Expense> expenses)? updatedExpenses,
-    TResult? Function(List<Income> incomes)? updatedIncomes,
+    TResult? Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult? Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(expenses, incomes);
@@ -1092,8 +1114,10 @@ class _$LoadedImpl implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult Function(List<Expense> expenses)? updatedExpenses,
-    TResult Function(List<Income> incomes)? updatedIncomes,
+    TResult Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1164,7 +1188,7 @@ abstract class _$$UpdatedExpensesImplCopyWith<$Res> {
           $Res Function(_$UpdatedExpensesImpl) then) =
       __$$UpdatedExpensesImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Expense> expenses});
+  $Res call({List<Expense> expenses, List<Income> incomes});
 }
 
 /// @nodoc
@@ -1179,12 +1203,17 @@ class __$$UpdatedExpensesImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? expenses = null,
+    Object? incomes = null,
   }) {
     return _then(_$UpdatedExpensesImpl(
       null == expenses
           ? _value._expenses
           : expenses // ignore: cast_nullable_to_non_nullable
               as List<Expense>,
+      null == incomes
+          ? _value._incomes
+          : incomes // ignore: cast_nullable_to_non_nullable
+              as List<Income>,
     ));
   }
 }
@@ -1192,8 +1221,10 @@ class __$$UpdatedExpensesImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdatedExpensesImpl implements _UpdatedExpenses {
-  const _$UpdatedExpensesImpl(final List<Expense> expenses)
-      : _expenses = expenses;
+  const _$UpdatedExpensesImpl(
+      final List<Expense> expenses, final List<Income> incomes)
+      : _expenses = expenses,
+        _incomes = incomes;
 
   final List<Expense> _expenses;
   @override
@@ -1203,9 +1234,17 @@ class _$UpdatedExpensesImpl implements _UpdatedExpenses {
     return EqualUnmodifiableListView(_expenses);
   }
 
+  final List<Income> _incomes;
+  @override
+  List<Income> get incomes {
+    if (_incomes is EqualUnmodifiableListView) return _incomes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_incomes);
+  }
+
   @override
   String toString() {
-    return 'FinancesState.updatedExpenses(expenses: $expenses)';
+    return 'FinancesState.updatedExpenses(expenses: $expenses, incomes: $incomes)';
   }
 
   @override
@@ -1213,12 +1252,15 @@ class _$UpdatedExpensesImpl implements _UpdatedExpenses {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdatedExpensesImpl &&
-            const DeepCollectionEquality().equals(other._expenses, _expenses));
+            const DeepCollectionEquality().equals(other._expenses, _expenses) &&
+            const DeepCollectionEquality().equals(other._incomes, _incomes));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_expenses));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_expenses),
+      const DeepCollectionEquality().hash(_incomes));
 
   @JsonKey(ignore: true)
   @override
@@ -1234,11 +1276,13 @@ class _$UpdatedExpensesImpl implements _UpdatedExpenses {
     required TResult Function() loading,
     required TResult Function(List<Expense> expenses, List<Income> incomes)
         loaded,
-    required TResult Function(List<Expense> expenses) updatedExpenses,
-    required TResult Function(List<Income> incomes) updatedIncomes,
+    required TResult Function(List<Expense> expenses, List<Income> incomes)
+        updatedExpenses,
+    required TResult Function(List<Income> incomes, List<Expense> expenses)
+        updatedIncomes,
     required TResult Function(String message) error,
   }) {
-    return updatedExpenses(expenses);
+    return updatedExpenses(expenses, incomes);
   }
 
   @override
@@ -1247,11 +1291,13 @@ class _$UpdatedExpensesImpl implements _UpdatedExpenses {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult? Function(List<Expense> expenses)? updatedExpenses,
-    TResult? Function(List<Income> incomes)? updatedIncomes,
+    TResult? Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult? Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult? Function(String message)? error,
   }) {
-    return updatedExpenses?.call(expenses);
+    return updatedExpenses?.call(expenses, incomes);
   }
 
   @override
@@ -1260,13 +1306,15 @@ class _$UpdatedExpensesImpl implements _UpdatedExpenses {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult Function(List<Expense> expenses)? updatedExpenses,
-    TResult Function(List<Income> incomes)? updatedIncomes,
+    TResult Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (updatedExpenses != null) {
-      return updatedExpenses(expenses);
+      return updatedExpenses(expenses, incomes);
     }
     return orElse();
   }
@@ -1316,10 +1364,12 @@ class _$UpdatedExpensesImpl implements _UpdatedExpenses {
 }
 
 abstract class _UpdatedExpenses implements FinancesState {
-  const factory _UpdatedExpenses(final List<Expense> expenses) =
+  const factory _UpdatedExpenses(
+          final List<Expense> expenses, final List<Income> incomes) =
       _$UpdatedExpensesImpl;
 
   List<Expense> get expenses;
+  List<Income> get incomes;
   @JsonKey(ignore: true)
   _$$UpdatedExpensesImplCopyWith<_$UpdatedExpensesImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1331,7 +1381,7 @@ abstract class _$$UpdatedIncomesImplCopyWith<$Res> {
           $Res Function(_$UpdatedIncomesImpl) then) =
       __$$UpdatedIncomesImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Income> incomes});
+  $Res call({List<Income> incomes, List<Expense> expenses});
 }
 
 /// @nodoc
@@ -1346,12 +1396,17 @@ class __$$UpdatedIncomesImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? incomes = null,
+    Object? expenses = null,
   }) {
     return _then(_$UpdatedIncomesImpl(
       null == incomes
           ? _value._incomes
           : incomes // ignore: cast_nullable_to_non_nullable
               as List<Income>,
+      null == expenses
+          ? _value._expenses
+          : expenses // ignore: cast_nullable_to_non_nullable
+              as List<Expense>,
     ));
   }
 }
@@ -1359,7 +1414,10 @@ class __$$UpdatedIncomesImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdatedIncomesImpl implements _UpdatedIncomes {
-  const _$UpdatedIncomesImpl(final List<Income> incomes) : _incomes = incomes;
+  const _$UpdatedIncomesImpl(
+      final List<Income> incomes, final List<Expense> expenses)
+      : _incomes = incomes,
+        _expenses = expenses;
 
   final List<Income> _incomes;
   @override
@@ -1369,9 +1427,17 @@ class _$UpdatedIncomesImpl implements _UpdatedIncomes {
     return EqualUnmodifiableListView(_incomes);
   }
 
+  final List<Expense> _expenses;
+  @override
+  List<Expense> get expenses {
+    if (_expenses is EqualUnmodifiableListView) return _expenses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_expenses);
+  }
+
   @override
   String toString() {
-    return 'FinancesState.updatedIncomes(incomes: $incomes)';
+    return 'FinancesState.updatedIncomes(incomes: $incomes, expenses: $expenses)';
   }
 
   @override
@@ -1379,12 +1445,15 @@ class _$UpdatedIncomesImpl implements _UpdatedIncomes {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdatedIncomesImpl &&
-            const DeepCollectionEquality().equals(other._incomes, _incomes));
+            const DeepCollectionEquality().equals(other._incomes, _incomes) &&
+            const DeepCollectionEquality().equals(other._expenses, _expenses));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_incomes));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_incomes),
+      const DeepCollectionEquality().hash(_expenses));
 
   @JsonKey(ignore: true)
   @override
@@ -1400,11 +1469,13 @@ class _$UpdatedIncomesImpl implements _UpdatedIncomes {
     required TResult Function() loading,
     required TResult Function(List<Expense> expenses, List<Income> incomes)
         loaded,
-    required TResult Function(List<Expense> expenses) updatedExpenses,
-    required TResult Function(List<Income> incomes) updatedIncomes,
+    required TResult Function(List<Expense> expenses, List<Income> incomes)
+        updatedExpenses,
+    required TResult Function(List<Income> incomes, List<Expense> expenses)
+        updatedIncomes,
     required TResult Function(String message) error,
   }) {
-    return updatedIncomes(incomes);
+    return updatedIncomes(incomes, expenses);
   }
 
   @override
@@ -1413,11 +1484,13 @@ class _$UpdatedIncomesImpl implements _UpdatedIncomes {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult? Function(List<Expense> expenses)? updatedExpenses,
-    TResult? Function(List<Income> incomes)? updatedIncomes,
+    TResult? Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult? Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult? Function(String message)? error,
   }) {
-    return updatedIncomes?.call(incomes);
+    return updatedIncomes?.call(incomes, expenses);
   }
 
   @override
@@ -1426,13 +1499,15 @@ class _$UpdatedIncomesImpl implements _UpdatedIncomes {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult Function(List<Expense> expenses)? updatedExpenses,
-    TResult Function(List<Income> incomes)? updatedIncomes,
+    TResult Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (updatedIncomes != null) {
-      return updatedIncomes(incomes);
+      return updatedIncomes(incomes, expenses);
     }
     return orElse();
   }
@@ -1482,10 +1557,12 @@ class _$UpdatedIncomesImpl implements _UpdatedIncomes {
 }
 
 abstract class _UpdatedIncomes implements FinancesState {
-  const factory _UpdatedIncomes(final List<Income> incomes) =
+  const factory _UpdatedIncomes(
+          final List<Income> incomes, final List<Expense> expenses) =
       _$UpdatedIncomesImpl;
 
   List<Income> get incomes;
+  List<Expense> get expenses;
   @JsonKey(ignore: true)
   _$$UpdatedIncomesImplCopyWith<_$UpdatedIncomesImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1559,8 +1636,10 @@ class _$ErrorImpl implements _Error {
     required TResult Function() loading,
     required TResult Function(List<Expense> expenses, List<Income> incomes)
         loaded,
-    required TResult Function(List<Expense> expenses) updatedExpenses,
-    required TResult Function(List<Income> incomes) updatedIncomes,
+    required TResult Function(List<Expense> expenses, List<Income> incomes)
+        updatedExpenses,
+    required TResult Function(List<Income> incomes, List<Expense> expenses)
+        updatedIncomes,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -1572,8 +1651,10 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult? Function(List<Expense> expenses)? updatedExpenses,
-    TResult? Function(List<Income> incomes)? updatedIncomes,
+    TResult? Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult? Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1585,8 +1666,10 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Expense> expenses, List<Income> incomes)? loaded,
-    TResult Function(List<Expense> expenses)? updatedExpenses,
-    TResult Function(List<Income> incomes)? updatedIncomes,
+    TResult Function(List<Expense> expenses, List<Income> incomes)?
+        updatedExpenses,
+    TResult Function(List<Income> incomes, List<Expense> expenses)?
+        updatedIncomes,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

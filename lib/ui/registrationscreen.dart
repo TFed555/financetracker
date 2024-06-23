@@ -14,41 +14,21 @@ class RegistrationScreen extends StatelessWidget {
   void _validation(BuildContext context, String email, String password) {
     BlocProvider.of<AuthoBloc>(context)
         .add(AuthoEvent.signUp(username: email, password: password));
+    Navigator.of(context).pop(
+                  MaterialPageRoute(
+                    builder: (context) => const AuthoScreen(),
+                  ),
+                );
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) => AuthoBloc(AuthoRepository()),
-        child: Builder(
-          builder: (context) => Scaffold(
+    return Scaffold(
             appBar: AppBar(
               title: const Text('Registration'),
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Colors.deepOrange,
             ),
-            body: BlocListener<AuthoBloc, AuthoState>(
-              listener: (context, state) {
-                state.when(
-                  initial: () {},
-                  loading: () => const Loading(),
-                  validate: () {},
-                  authenticated: (user) {
-                    Navigator.of(context).pop(
-                      MaterialPageRoute(
-                        builder: (context) => const AuthoScreen(),
-                      ),
-                    );
-                  },
-                  registration: () {},
-                  failure: (err) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text(err),
-                      duration: const Duration(milliseconds: 1500),
-                    ));
-                  },
-                );
-              },
-              child: Center(
+             body: Center(
                 child: Column(
                   children: <Widget>[
                     Padding(
@@ -89,8 +69,8 @@ class RegistrationScreen extends StatelessWidget {
                             onPressed: () => _validation(
                                 context, _controller.text, _controller1.text),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurple,
-                              foregroundColor: Colors.white,
+                              backgroundColor: Colors.deepOrange,
+                              foregroundColor: Colors.black,
                             ),
                             child: const Text('Registration',
                                 style: TextStyle(fontSize: 20)),
@@ -101,8 +81,6 @@ class RegistrationScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ),
-        ));
+            );
   }
 }
